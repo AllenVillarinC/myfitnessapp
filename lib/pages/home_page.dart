@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:myfitnessapp/appconfig/controllers.dart';
 import 'package:myfitnessapp/pages/body/tab_bar.dart';
 import 'package:myfitnessapp/widgets/text_20.dart';
 import 'package:myfitnessapp/widgets/text_40.dart';
@@ -37,7 +36,7 @@ class _HomePageState extends State<HomePage> {
         ),
         drawer: Drawer(
           child: Container(
-            color: Color(colorController),
+            color: const Color(0xffffffff),
             child: ListView(
               children: const [
                 DrawerHeader(

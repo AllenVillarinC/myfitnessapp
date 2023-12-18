@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myfitnessapp/appconfig/screen_scaling.dart';
+import 'package:myfitnessapp/pages/body/workouts/chest_workout.dart';
 import 'package:myfitnessapp/widgets/text_20.dart';
 import 'package:myfitnessapp/widgets/text_30.dart';
 import 'package:myfitnessapp/widgets/text_40.dart';
@@ -53,7 +54,7 @@ class _TabBarWidgetState extends State<TabBarWidget> {
           const Expanded(
             child: TabBarView(children: [
               Center(child: Text20(label: 'All')),
-              Center(child: Text20(label: 'Chest')),
+              ChestWorkout(),
               Center(child: Text20(label: 'Back')),
               Center(child: Text20(label: 'Shoulders')),
               Center(child: Text20(label: 'Arms')),
