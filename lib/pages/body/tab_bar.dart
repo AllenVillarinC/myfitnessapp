@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:myfitnessapp/appconfig/screen_scaling.dart';
+import 'package:myfitnessapp/pages/body/workouts/arms_workout.dart';
+import 'package:myfitnessapp/pages/body/workouts/back_workout.dart';
+import 'package:myfitnessapp/pages/body/workouts/cardio_workout.dart';
 import 'package:myfitnessapp/pages/body/workouts/chest_workout.dart';
+import 'package:myfitnessapp/pages/body/workouts/core_workout.dart';
+import 'package:myfitnessapp/pages/body/workouts/legs_workout.dart';
+import 'package:myfitnessapp/pages/body/workouts/shoulders_workout.dart';
 import 'package:myfitnessapp/widgets/text_20.dart';
 import 'package:myfitnessapp/widgets/text_30.dart';
 import 'package:myfitnessapp/widgets/text_40.dart';
@@ -16,7 +22,7 @@ class _TabBarWidgetState extends State<TabBarWidget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 430 * screenScaling(context),
+      width: 430 - (430 * screenScaling(context)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -38,8 +44,8 @@ class _TabBarWidgetState extends State<TabBarWidget> {
             labelColor: Colors.white,
             unselectedLabelColor: Colors.black,
             labelPadding: EdgeInsets.symmetric(
-                horizontal: 25 * screenScaling(context),
-                vertical: 15 * screenScaling(context)),
+                horizontal: 25 - (25 * screenScaling(context)),
+                vertical: 15 - (15 * screenScaling(context))),
             tabs: const [
               Text20(label: 'All'),
               Text20(label: 'Chest'),
@@ -53,14 +59,24 @@ class _TabBarWidgetState extends State<TabBarWidget> {
           ),
           const Expanded(
             child: TabBarView(children: [
-              Center(child: Text20(label: 'All')),
+              SingleChildScrollView(
+                child: Column(children: [
+                  ChestWorkout(),
+                  BackWorkout(),
+                  ShouldersWorkout(),
+                  ArmsWorkout(),
+                  CoreWorkout(),
+                  LegsWorkout(),
+                  CardioWorkout(),
+                ]),
+              ),
               ChestWorkout(),
-              Center(child: Text20(label: 'Back')),
-              Center(child: Text20(label: 'Shoulders')),
-              Center(child: Text20(label: 'Arms')),
-              Center(child: Text20(label: 'Core')),
-              Center(child: Text20(label: 'Legs')),
-              Center(child: Text20(label: 'Cardio')),
+              BackWorkout(),
+              ShouldersWorkout(),
+              ArmsWorkout(),
+              CoreWorkout(),
+              LegsWorkout(),
+              CardioWorkout(),
             ]),
           )
         ],

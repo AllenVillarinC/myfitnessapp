@@ -11,7 +11,7 @@ class Text40 extends StatelessWidget {
       label,
       style: TextStyle(
         fontFamily: 'Montserrat-ExtraBold',
-        fontSize: 40 * screenScaling(context),
+        fontSize: 40 - (40 * screenScaling(context)),
       ),
     );
   }

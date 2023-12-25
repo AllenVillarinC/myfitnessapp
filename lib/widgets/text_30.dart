@@ -11,7 +11,7 @@ class Text30 extends StatelessWidget {
       label, // google connect?
       style: TextStyle(
         fontFamily: 'Montserrat-SemiBold',
-        fontSize: 30 * screenScaling(context),
+        fontSize: 30 - (30 * screenScaling(context)),
       ),
     );
   }

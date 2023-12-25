@@ -11,7 +11,7 @@ class Text20 extends StatelessWidget {
       label,
       style: TextStyle(
         fontFamily: 'Montserrat-Bold',
-        fontSize: 20 * screenScaling(context),
+        fontSize: 20 - (20 * screenScaling(context)),
       ),
     );
   }
