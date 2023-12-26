@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:myfitnessapp/appconfig/controllers.dart';
 import 'package:myfitnessapp/pages/body/tab_bar.dart';
 import 'package:myfitnessapp/widgets/text_20.dart';
 import 'package:myfitnessapp/widgets/text_40.dart';
@@ -12,6 +13,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool isSwitched = false;
   int _selectedIndex = 0;
   static const List<Widget> _widgetOptions = <Widget>[
     TabBarWidget(),
@@ -22,12 +24,16 @@ class _HomePageState extends State<HomePage> {
       'Profile',
     ),
   ];
+  
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 8,
       child: Scaffold(
+        backgroundColor: const Color(0xff2f2e3b),
         appBar: AppBar(
+          iconTheme: IconThemeData(color: Color(textcolor)),
+          backgroundColor:const Color(0xff2f2e3b),
           title: SizedBox(
             height: kToolbarHeight,
             child: Image.asset('assets/images/company_name.png',
@@ -35,26 +41,32 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         drawer: Drawer(
-          child: Container(
-            color: const Color(0xffffffff),
-            child: ListView(
-              children: const [
-                DrawerHeader(
-                  child: Center(
-                    child: Text40(label: 'MyFitnessApp'),
+          backgroundColor: const Color(0xff343637),
+          child: ListView(
+            children: [
+              DrawerHeader(
+                child: Center(
+                  child: Text40(
+                    label: 'MyFitnessApp',
+                    labelcolor: textcolor,
                   ),
                 ),
-                ListTile(
-                  leading: Icon(Icons.people),
-                  title: Text20(label: 'Friends'),
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.people,
+                  color: Color(textcolor),
                 ),
-                ListTile(
-                  leading: Icon(Icons.shopping_bag),
-                  title: Text20(label: 'Shop'),
+                title: Text20(label: 'Friends', labelcolor: textcolor),
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.shopping_bag,
+                  color: Color(textcolor),
                 ),
-                // add switch to change from light mode to dark mode
-              ],
-            ),
+                title: Text20(label: 'Shop', labelcolor: textcolor),
+              ),
+            ],
           ),
         ),
         body: Center(
@@ -69,18 +81,21 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.all(10),
             textStyle: const TextStyle(
                 fontFamily: 'Montserrat-Bold', color: Colors.white),
-            tabs: const [
+            tabs: [
               GButton(
                 icon: Icons.fitness_center,
                 text: 'Workouts',
+                iconColor: Color(textcolor),
               ),
               GButton(
                 icon: Icons.list_alt,
                 text: 'Workout history',
+                iconColor: Color(textcolor),
               ),
               GButton(
                 icon: Icons.person,
                 text: 'Profile',
+                iconColor: Color(textcolor),
               )
             ],
             selectedIndex: _selectedIndex,

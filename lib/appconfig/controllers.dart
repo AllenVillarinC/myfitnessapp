@@ -1,2 +1,1 @@
-// light mode
-int colorControllerText = 0xffffffff;
+int textcolor = 0xffffffff; // white

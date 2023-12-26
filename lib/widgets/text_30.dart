@@ -3,7 +3,8 @@ import 'package:myfitnessapp/appconfig/screen_scaling.dart';
 
 class Text30 extends StatelessWidget {
   final String label;
-  const Text30({super.key, required this.label});
+  final int labelcolor;
+  const Text30({super.key, required this.label, required this.labelcolor});
 
   @override
   Widget build(BuildContext context) {
@@ -12,6 +13,7 @@ class Text30 extends StatelessWidget {
       style: TextStyle(
         fontFamily: 'Montserrat-SemiBold',
         fontSize: 30 - (30 * screenScaling(context)),
+        color: Color(labelcolor)
       ),
     );
   }

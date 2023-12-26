@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myfitnessapp/appconfig/controllers.dart';
 import 'package:myfitnessapp/appconfig/screen_scaling.dart';
 import 'package:myfitnessapp/pages/body/workouts/arms_workout.dart';
 import 'package:myfitnessapp/pages/body/workouts/back_workout.dart';
@@ -7,7 +8,7 @@ import 'package:myfitnessapp/pages/body/workouts/chest_workout.dart';
 import 'package:myfitnessapp/pages/body/workouts/core_workout.dart';
 import 'package:myfitnessapp/pages/body/workouts/legs_workout.dart';
 import 'package:myfitnessapp/pages/body/workouts/shoulders_workout.dart';
-import 'package:myfitnessapp/widgets/text_20.dart';
+import 'package:myfitnessapp/widgets/tab_text.dart';
 import 'package:myfitnessapp/widgets/text_30.dart';
 import 'package:myfitnessapp/widgets/text_40.dart';
 
@@ -27,9 +28,15 @@ class _TabBarWidgetState extends State<TabBarWidget> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 10),
-          const Text30(label: 'Hi, Allen'),
+          Text30(
+            label: 'Hi, Allen',
+            labelcolor: textcolor,
+          ),
           const SizedBox(height: 5),
-          const Text40(label: 'Let\'s start training!'),
+          Text40(
+            label: 'Let\'s start training!',
+            labelcolor: textcolor,
+          ),
           const SizedBox(height: 5),
           TabBar(
             dividerColor: Colors.transparent,
@@ -42,19 +49,19 @@ class _TabBarWidgetState extends State<TabBarWidget> {
             isScrollable: true,
             indicatorSize: TabBarIndicatorSize.tab,
             labelColor: Colors.white,
-            unselectedLabelColor: Colors.black,
+            unselectedLabelColor: Color(textcolor),
             labelPadding: EdgeInsets.symmetric(
                 horizontal: 25 - (25 * screenScaling(context)),
                 vertical: 15 - (15 * screenScaling(context))),
             tabs: const [
-              Text20(label: 'All'),
-              Text20(label: 'Chest'),
-              Text20(label: 'Back'),
-              Text20(label: 'Shoulders'),
-              Text20(label: 'Arms'),
-              Text20(label: 'Core'),
-              Text20(label: 'Legs'),
-              Text20(label: 'Cardio'),
+              TabText(label: 'All'),
+              TabText(label: 'Chest'),
+              TabText(label: 'Back'),
+              TabText(label: 'Shoulders'),
+              TabText(label: 'Arms'),
+              TabText(label: 'Core'),
+              TabText(label: 'Legs'),
+              TabText(label: 'Cardio'),
             ],
           ),
           const Expanded(
